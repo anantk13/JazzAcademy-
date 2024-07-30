@@ -8,7 +8,7 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 import axios from 'axios';
 import { parseCookies, destroyCookie } from 'nookies';
-import { useAuth } from '@/app/AuthContext/page'; // Adjust path based on your setup
+import { useAuth } from '@/app/Context/authContext'; // Adjust path based on your setup
 
 function Navbar({ className }: { className?: string }) {
   const { isAuthenticated, setIsAuthenticated } = useAuth(); // Use context if available
