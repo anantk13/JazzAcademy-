@@ -38,7 +38,12 @@ export async function POST(request:NextRequest){
             success: true
         })
 
-        response.cookies.set("token",token,{httpOnly: true, path: '/' })   // in next there is no requirement for downloading packages for cookies as response type is NextResponse
+        response.cookies.set("token",token,{  
+            path: '/',
+            secure: process.env.NODE_ENV === 'production', // Ensure cookies are secure in production
+            sameSite: 'strict'
+        })   // in next there is no requirement for downloading packages for cookies as response type is NextResponse
+        console.log('Token set in cookies:', token);
         return response
     } catch (error:any) {
         return NextResponse.json({error: error.message},{status:500})
