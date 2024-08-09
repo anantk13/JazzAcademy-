@@ -44,17 +44,17 @@ function Navbar({ className }: { className?: string }) {
         <Link href={"/contact"}>
           <MenuItem setActive={setActive} active={active} item="Contact Us" />
         </Link>
-        {!isAuthenticated ? (
-          <Link href="/login">
-            <MenuItem setActive={setActive} active={active} item="Login" />
-          </Link>
-        ) : (
-          <div>
-            <button onClick={logout}>
-              <MenuItem setActive={setActive} active={active} item="Logout" />
-            </button>
-          </div>
-        )}
+        {/* {!isAuthenticated ? (
+          // <Link href="/login">
+          //   <MenuItem setActive={setActive} active={active} item="Login" />
+          // </Link>
+        // ) : (
+          // <div>
+          //   <button onClick={logout}>
+          //     <MenuItem setActive={setActive} active={active} item="Logout" />
+          //   </button>
+        //   </div>
+        // )} */}
       </Menu>
     </div>
   );
